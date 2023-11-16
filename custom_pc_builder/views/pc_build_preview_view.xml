@@ -1,0 +1,30 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_pc_build_preview_form" model="ir.ui.view">
+        <field name="name">pc.build.preview.form</field>
+        <field name="model">pc.builds</field>
+        <field name="arch" type="xml">
+            <form string="PC Build Preview">
+                <sheet>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="component_ids"/>
+                        <field name="build_configuration"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pc_build_preview" model="ir.actions.act_window">
+        <field name="name">PC Build Preview</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pc.builds</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_pc_build_preview_form"/>
+    </record>
+
+    <menuitem id="menu_pc_build_preview" name="PC Build Preview" parent="base.menu_custom" sequence="20" action="action_pc_build_preview"/>
+</odoo>
+```

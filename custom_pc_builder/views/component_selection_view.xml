@@ -1,0 +1,54 @@
+```xml
+<odoo>
+    <data>
+        <!-- Component Selection Form View -->
+        <record id="view_pc_component_form" model="ir.ui.view">
+            <field name="name">pc.component.form</field>
+            <field name="model">pc.components</field>
+            <field name="arch" type="xml">
+                <form string="PC Component">
+                    <sheet>
+                        <group>
+                            <field name="component_type"/>
+                            <field name="component_name"/>
+                            <field name="component_specifications"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Component Selection Tree View -->
+        <record id="view_pc_component_tree" model="ir.ui.view">
+            <field name="name">pc.component.tree</field>
+            <field name="model">pc.components</field>
+            <field name="arch" type="xml">
+                <tree string="PC Components">
+                    <field name="component_type"/>
+                    <field name="component_name"/>
+                    <field name="component_specifications"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Component Selection Action -->
+        <record id="action_pc_components" model="ir.actions.act_window">
+            <field name="name">PC Components</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pc.components</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new PC Component
+                </p>
+                <p>
+                    Here, you can create and manage your PC Components.
+                </p>
+            </field>
+        </record>
+
+        <!-- Component Selection Menu -->
+        <menuitem id="menu_pc_components" name="PC Components" action="action_pc_components"/>
+    </data>
+</odoo>
+```
