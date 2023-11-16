@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_pc_components","access.pc.components","custom_pc_builder.model_pc_components","base.group_user","1","1","1","1"
+"access_pc_builds","access.pc.builds","custom_pc_builder.model_pc_builds","base.group_user","1","1","1","1"
+"access_saved_pc_builds","access.saved.pc.builds","custom_pc_builder.model_saved_pc_builds","base.group_user","1","1","1","1"

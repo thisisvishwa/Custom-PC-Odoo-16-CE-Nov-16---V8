@@ -1,0 +1,31 @@
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="action_report_saved_pc_builds"
+        model="saved_pc_builds"
+        string="Saved PC Builds"
+        report_type="qweb-pdf"
+        name="custom_pc_builder.saved_pc_builds_report"
+        file="custom_pc_builder.saved_pc_builds_report"
+        print_report_name="'Saved PC Builds - %s' % (object.name)"
+    />
+
+    <template id="saved_pc_builds_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>Saved PC Builds Report</h2>
+                    <p><strong>User:</strong> <t t-esc="doc.user_id.name"/></p>
+                    <p><strong>Build Name:</strong> <t t-esc="doc.name"/></p>
+                    <p><strong>Timestamp:</strong> <t t-esc="doc.timestamp"/></p>
+                    <h3>Selected Components:</h3>
+                    <t t-foreach="doc.component_ids" t-as="component">
+                        <p><t t-esc="component.name"/> - <t t-esc="component.specifications"/></p>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+```

@@ -1,0 +1,54 @@
+```xml
+<odoo>
+    <data>
+        <!-- Saved PC Builds Tree View -->
+        <record id="view_saved_pc_builds_tree" model="ir.ui.view">
+            <field name="name">saved.pc.builds.tree</field>
+            <field name="model">saved.pc.builds</field>
+            <field name="arch" type="xml">
+                <tree string="Saved PC Builds">
+                    <field name="user_id"/>
+                    <field name="pc_build_id"/>
+                    <field name="timestamp"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Saved PC Builds Form View -->
+        <record id="view_saved_pc_builds_form" model="ir.ui.view">
+            <field name="name">saved.pc.builds.form</field>
+            <field name="model">saved.pc.builds</field>
+            <field name="arch" type="xml">
+                <form string="Saved PC Builds">
+                    <sheet>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="pc_build_id"/>
+                            <field name="timestamp"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Saved PC Builds Action -->
+        <record id="action_saved_pc_builds" model="ir.actions.act_window">
+            <field name="name">Saved PC Builds</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">saved.pc.builds</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Saved PC Build
+                </p>
+                <p>
+                    Here, you can save and manage your custom PC builds.
+                </p>
+            </field>
+        </record>
+
+        <!-- Saved PC Builds Menu -->
+        <menuitem id="menu_saved_pc_builds" name="Saved PC Builds" parent="custom_pc_builder.menu_custom_pc_builder" sequence="30" action="action_saved_pc_builds"/>
+    </data>
+</odoo>
+```
